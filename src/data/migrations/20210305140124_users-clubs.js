@@ -17,6 +17,7 @@ exports.up = function (knex) {
 			.inTable("clubs")
 			.onUpdate("CASCADE")
 			.onDelete("CASCADE");
+		table.timestamp("joined_at").defaultTo(knex.fn.now());
 	});
 };
 
